@@ -3,7 +3,7 @@ var configService = require('../conf/Config.js');
 var config = configService.config;
 var log = require('./Logger.js').logger;
 var githubService = require('./GithubService.js');
-var jenkinsapi = require('jenkins-api');
+var jenkinsapi = require('jenkins-api-findly');
 var _ = require('underscore');
 
 var jenkins = jenkinsapi.init(config.jenkins.connectionString,{
