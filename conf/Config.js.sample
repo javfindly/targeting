@@ -34,7 +34,7 @@ var config = {
 		},
 		jenkins: {
 			connectionString: "somejenkinsconnectionstring"
-		}
+		},
 		log: {
 			level: 'debug',
 			filename: 'server.log',
