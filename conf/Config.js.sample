@@ -1,0 +1,60 @@
+var environment = process.env.NODE_ENV;
+var appArguments = process.argv;
+var appPath = appArguments[1];
+
+if(!environment) {
+	if(appPath.indexOf('mocha') != -1) {
+		environment = 'test'
+	} else {
+		environment = 'development';
+	}
+}
+
+var config = {
+	//DEVELOPMENT CONFIGURATION
+	development: {
+		targetProcess: {
+			domain: 'somedomain.com',
+			token: 'sometoken'
+		},
+		mail: {
+			serviceProvider: 'someprovide',
+			user:'someuser',
+			password: 'somepassword',
+			host: 'somestpserver',
+			port: 465,
+			from:'somefromemailaddress'
+		},
+		github: {
+			token: "somegithubtoken",
+			note: "some token name",
+			id: 564654654654,
+			user:'someuser',
+			repo:'somerepo'
+		},
+		jenkins: {
+			connectionString: "somejenkinsconnectionstring"
+		}
+		log: {
+			level: 'debug',
+			filename: 'server.log',
+			colorize: true,
+			timestamp: true,
+			prettyPrint: true
+		}
+	},
+	//test configuration + production configuration
+}
+
+function isDevelopment() { return environment == 'development' }
+function isProduction() { return environment == 'production' }
+function isTest() { return environment == 'test' }
+
+console.log("environment " + environment);
+
+exports.config = config[environment];
+exports.selectConfiguration = config;
+exports.environment = environment;
+exports.isTest = isTest;
+exports.isDevelopment = isDevelopment;
+exports.isProduction = isProduction;
