@@ -1,0 +1,11 @@
+<div class="promotion-info">
+	<br />
+	<span class="promotion-number"/>Promotion Number: #{{promotion.number}}</span>
+	<br /><br />
+	{{#if promotion.date}}<span class="promotion-date"/>Promotion Build date: <span class="moment-date">{{promotion.date}}</span></span><br /><br />{{/if}}
+	{{#if build.date}}<span class="promotion-date"/>Job Build date: <span class="moment-date">{{build.date}}</span></span><br /><br />{{/if}}
+	<a href="{{url}}">{{promotion.fullDisplayName}}</a>
+	<br />
+	<br />
+	<a href="{{target.url}}">Job Build Number #{{build.number}}</a>
+</div>

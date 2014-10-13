@@ -1,0 +1,255 @@
+<!doctype html>
+<html lang="en" class="no-js">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+
+	<link href='http://fonts.googleapis.com/css?family=Droid+Serif|Open+Sans:400,700' rel='stylesheet' type='text/css'>
+
+	<link rel="stylesheet" href="css/reset.css"> <!-- CSS reset -->
+	<link rel="stylesheet" href="css/style.css"> <!-- Resource style -->
+	<link rel="stylesheet" href="css/jquery.jsonview.css">
+	<script src="js/modernizr.js"></script> <!-- Modernizr -->
+  	<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
+	<script src="js/main.js"></script>
+	<script src="js/jquery.jsonview.js"></script>
+  	<script type="text/javascript">
+  	function checkme(e) {
+  		var inputCheck = $(this).attr('for');
+  		var isChecked = $(inputCheck).prop('checked');
+  		$(inputCheck).prop('checked',!isChecked);
+  	}
+  	function removeMe(elem) {
+  		$(elem).parent().remove();
+  	}
+  	</script>
+	<title>Targeting</title>
+</head>
+<body>
+	<div class="content">
+		<div class="outer-column">&nbsp;</div>
+		<div class="roundbox">
+			<div class="header">
+				<h1>Target Process Query Editor</h1>
+				<div class="logo">
+					<img src="img/targetbee.png"/>
+				</div>
+			</div>
+
+			<section id="editor">
+			<a class="filter-tips" href="http://dev.targetprocess.com/rest/response_format#filtering" title="Query help" target="blank">Need help?</a>
+				<h3>Type your TargetProcess query:</h3>
+				<section id="filters">
+					<div class="query-filter">
+						<label for="filter-user-story" onclick="checkme">User Stories</label>
+						<input type="checkbox" id="filter-user-story" name="UserStories" checked/>
+					</div>
+
+					<div class="query-filter">
+						<label for="filter-bugs" onclick="checkme">Bugs</label>
+						<input type="checkbox" id="filter-bugs" name="Bugs" checked />
+					</div>
+
+					<div class="query-filter">
+						<label for="filter-tasks" onclick="checkme">Tasks</label>
+						<input type="checkbox" id="filter-tasks" name="Tasks"/>
+					</div>
+				</section>
+				<br />
+				<br />
+				<br />
+				<section id="agreggator">
+					<div id="aggregator-add">+ Add Aggregator</div>
+				</section>
+				<textarea id="query-editor" class="query-editor">(EntityState.Name eq 'In Progress') and (Project.Name eq 'ATS Skins Scrum')</textarea>
+				<a href="#" class="queryButton" id="query-execute">Run</a>
+				<a href="#" class="queryButton" id="query-include-all">All</a>
+				<a href="#" class="queryButton" id="query-include-none">None</a>
+				<br />
+				<br />
+				<br />
+				<section id="includeFields">
+					<div class="field-include">
+					<label for="include-Id" onclick="checkme">Id</label><input type="checkbox"  checked id=
+					"include-Id" name="Id" />
+					</div>
+
+					<div class="field-include">
+					<label for="include-Name" onclick="checkme">Name</label><input type="checkbox"  checked id=
+					"include-Name" name="Name" />
+					</div>
+
+					<div class="field-include">
+					<label for="include-Description" onclick="checkme">Description</label><input type=
+					"checkbox"  id="include-Description" name="Description" />
+					</div>
+
+					<div class="field-include">
+					<label for="include-StartDate" onclick="checkme">StartDate</label><input type=
+					"checkbox"  checked id="include-StartDate" name="StartDate" />
+					</div>
+
+					<div class="field-include">
+					<label for="include-Severity" onclick="checkme">Severity</label><input type=
+					"checkbox" id="include-Severity" name="Severity" />
+					</div>
+
+					<div class="field-include">
+					<label for="include-EndDate" onclick="checkme">EndDate</label><input type="checkbox" 
+					id="include-EndDate" name="EndDate" />
+					</div>
+
+					<div class="field-include">
+					<label for="include-CreateDate" onclick="checkme">CreateDate</label><input type=
+					"checkbox"  id="include-CreateDate" name="CreateDate" />
+					</div>
+
+					<div class="field-include">
+					<label for="include-ModifyDate" onclick="checkme">ModifyDate</label><input type=
+					"checkbox"  id="include-ModifyDate" name="ModifyDate" />
+					</div>
+
+					<div class="field-include">
+					<label for="include-LastCommentDate" onclick=
+					"checkme">LastCommentDate</label><input type="checkbox"  id="include-LastCommentDate"
+					name="LastCommentDate" />
+					</div>
+
+					<div class="field-include">
+					<label for="include-Tags" onclick="checkme">Tags</label><input type="checkbox"  checked id=
+					"include-Tags" name="Tags" />
+					</div>
+
+					<div class="field-include">
+					<label for="include-NumericPriority" onclick=
+					"checkme">NumericPriority</label><input type="checkbox" checked id="include-NumericPriority"
+					name="NumericPriority" />
+					</div>
+
+					<div class="field-include">
+					<label for="include-Effort" onclick="checkme">Effort</label><input type="checkbox" 
+					id="include-Effort" name="Effort" checked/>
+					</div>
+
+					<div class="field-include">
+					<label for="include-EffortCompleted" onclick=
+					"checkme">EffortCompleted</label><input type="checkbox"  id="include-EffortCompleted"
+					name="EffortCompleted" />
+					</div>
+
+					<div class="field-include">
+					<label for="include-EffortToDo" onclick="checkme">EffortToDo</label><input type=
+					"checkbox"  id="include-EffortToDo" name="EffortToDo" />
+					</div>
+
+					<div class="field-include">
+					<label for="include-Progress" onclick="checkme">Progress</label><input type=
+					"checkbox"  id="include-Progress" name="Progress" />
+					</div>
+
+					<div class="field-include">
+					<label for="include-TimeSpent" onclick="checkme">TimeSpent</label><input type=
+					"checkbox"  id="include-TimeSpent" name="TimeSpent" />
+					</div>
+
+					<div class="field-include">
+					<label for="include-TimeRemain" onclick="checkme">TimeRemain</label><input type=
+					"checkbox"  id="include-TimeRemain" name="TimeRemain" />
+					</div>
+
+					<div class="field-include">
+					<label for="include-PlannedStartDate" onclick=
+					"checkme">PlannedStartDate</label><input type="checkbox"  id=
+					"include-PlannedStartDate" name="PlannedStartDate" />
+					</div>
+
+					<div class="field-include">
+					<label for="include-PlannedEndDate" onclick=
+					"checkme">PlannedEndDate</label><input type="checkbox"  id="include-PlannedEndDate"
+					name="PlannedEndDate" />
+					</div>
+
+					<div class="field-include">
+					<label for="include-InitialEstimate" onclick=
+					"checkme">InitialEstimate</label><input type="checkbox"  id="include-InitialEstimate"
+					name="InitialEstimate" />
+					</div>
+
+					<div class="field-include">
+					<label for="include-EntityType" onclick="checkme">EntityType</label><input type=
+					"checkbox" checked id="include-EntityType" name="EntityType" />
+					</div>
+
+					<div class="field-include">
+					<label for="include-Owner" onclick="checkme">Owner</label><input type="checkbox" checked id=
+					"include-Owner" name="Owner" />
+					</div>
+
+					<div class="field-include">
+					<label for="include-LastCommentedUser" onclick=
+					"checkme">LastCommentedUser</label><input type="checkbox"  id=
+					"include-LastCommentedUser" name="LastCommentedUser" />
+					</div>
+
+					<div class="field-include">
+					<label for="include-Project" onclick="checkme">Project</label><input type="checkbox" checked 
+					id="include-Project" name="Project" />
+					</div>
+
+					<div class="field-include">
+					<label for="include-Release" onclick="checkme">Release</label><input type="checkbox" checked
+					id="include-Release" name="Release" />
+					</div>
+
+					<div class="field-include">
+					<label for="include-Iteration" onclick="checkme">Iteration</label><input type=
+					"checkbox"  checked id="include-Iteration" name="Iteration" />
+					</div>
+
+					<div class="field-include">
+					<label for="include-TeamIteration" onclick=
+					"checkme">TeamIteration</label><input type="checkbox"  id="include-TeamIteration"
+					name="TeamIteration" />
+					</div>
+
+					<div class="field-include">
+					<label for="include-Team" onclick="checkme">Team</label><input type="checkbox"  id=
+					"include-Team" name="Team" checked />
+					</div>
+
+					<div class="field-include">
+					<label for="include-Priority" onclick="checkme">Priority</label><input type=
+					"checkbox"  id="include-Priority" name="Priority" checked />
+					</div>
+
+					<div class="field-include">
+					<label for="include-EntityState" onclick="checkme">EntityState</label><input type=
+					"checkbox"  id="include-EntityState" name="EntityState" checked/>
+					</div>
+
+					<div class="field-include">
+					<label for="include-Feature" onclick="checkme">Feature</label><input type="checkbox" 
+					id="include-Feature" name="Feature" />
+					</div>
+
+					<div class="field-include">
+					<label for="include-Build" onclick="checkme">Build</label><input type="checkbox" 
+					id="include-Build" name="Build" />
+					</div>
+
+					<div class="field-include">
+					<label for="include-CustomFields" onclick="checkme">CustomFields</label><input type=
+					"checkbox"  id="include-CustomFields" name="CustomFields" />
+					</div>
+				</section>
+			</section>
+			<section id="results">
+				<a id="downloadJson" href='#' style="display: none;">Download</a>
+				<div class="results-container">
+					No results
+				</div>
+			</section>
+		</div>
+		<div class="outer-column"></div>
+	</div>
+</body>

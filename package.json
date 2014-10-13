@@ -1,0 +1,22 @@
+{
+  "name": "targeting",
+  "description": "Web interface for TargetProcess administration",
+  "version": "0.0.1",
+  "private": true,
+  "dependencies": {
+    "express": "4.x",
+    "tp-api": "1.0.5",
+    "jenkins-api": "0.2.4",
+    "body-parser": "1.9.0",
+    "nodemailer": "1.3.0",
+    "nodemailer-smtp-transport": "0.1.13",
+    "octonode": "0.6.7",
+    "underscore": "1.7.0",
+    "winston":"0.8.1",
+    "rewire":"2.1.0"
+  },
+  "devDependencies": {
+    "should": "~4.0.4",
+    "sinon": "~1.10.3"
+  }
+}

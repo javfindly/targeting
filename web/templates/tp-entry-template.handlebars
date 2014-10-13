@@ -1,0 +1,52 @@
+<div class="tpEntityRow">
+	<a class="idContainerValue" target="blank" href="https://findly.tpondemand.com/entity/{{entityFields.Id}}">
+		<span>#{{entityFields.Id}}</span>
+	</a>
+	<div class="entityTypeContainer {{entityFields.EntityType.Name}}"
+		<span class="entityTypeValue">{{entityFields.EntityType.Name}}</span>
+	</div>
+	<ul class="entityTags">
+		{{#if entityFields.Tags}}
+			<li class="iconTag"><img src="img/tag.png" /></li>
+		{{/if}}
+		{{#splitString entityFields.Tags delimiter=","}}
+			<li class="singleTag">{{this}}</li>
+		{{/splitString}}
+		{{#unless entityFields.Tags}}
+			<li class="no-tags">No tags</li>
+		{{/unless}}
+	</ul>
+	<span class="entityTitleValue">{{entityFields.Name}}</span>
+	<div class="remainingEntityData">
+		<ul>
+			<li>
+				<div class="entityDataLabel">Effort:</div>
+				<span class="entityDataValue">{{entityFields.Effort}}</span>
+			</li>
+			<li>
+				<div class="entityDataLabel">StartDate:</div>
+				<span class="entityDataValue">{{#tpDate entityFields.StartDate}}{{this}}{{/tpDate}}</span>
+			</li>
+			<li>
+				<div class="entityDataLabel">EntityState:</div>
+				<span class="entityDataValue">{{entityFields.EntityState.Name}}</span>
+			</li>
+			<li>
+				<div class="entityDataLabel">Project:</div>
+				<span class="entityDataValue">{{entityFields.Project.Name}}</span>
+			</li>
+			<li>
+				<div class="entityDataLabel">Release:</div>
+				<span class="entityDataValue">{{entityFields.Release.Name}}</span>
+			</li>
+			<li>
+				<div class="entityDataLabel">Iteration:</div>
+				<span class="entityDataValue">{{entityFields.Iteration.Name}}</span>
+			</li>
+		</ul>
+	</div>
+	<div class="ticket-status">&nbsp;</div>
+	<div data-id='{{entityFields.Id}}' data-type='{{entityFields.EntityType.Name}}' class='individual-approval'>
+		<span>Move</span>
+	</div>
+</div>
