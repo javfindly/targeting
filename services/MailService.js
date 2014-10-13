@@ -1,4 +1,4 @@
-var config = require('../conf/Config.js').config;
+var config = require('../conf/ConfigService.js').config;
 var utils = require('./Utils.js');
 
 var nodemailer = require('nodemailer');

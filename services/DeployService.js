@@ -1,5 +1,5 @@
 var tpService = require('./TPService.js');
-var configService = require('../conf/Config.js');
+var configService = require('../conf/ConfigService.js');
 var config = configService.config;
 var log = require('./Logger.js').logger;
 var githubService = require('./GithubService.js');

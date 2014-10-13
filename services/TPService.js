@@ -1,4 +1,4 @@
-var config = require('../conf/Config.js').config;
+var config = require('../conf/ConfigService.js').config;
 var log = require('./Logger.js').logger;
 var _ = require('underscore');
 

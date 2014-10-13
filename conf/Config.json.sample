@@ -1,0 +1,33 @@
+{
+	"development": {
+		"targetProcess": {
+			"domain": "sometpdomain",
+			"token":"sometoken"
+		},
+		"mail": {
+			"serviceProvider": "someemailprovide",
+			"user":"someuser",
+			"password": "somepassword",
+			"host": "somesmtphost",
+			"port": 465,
+			"from":"somefromemail"
+		},
+		"github": {
+			"token": "sometoken",
+			"note": "somenote",
+			"id": 4654654564654654654,
+			"user":"someuser",
+			"repo":"somerepo"
+		},
+		"jenkins": {
+			"connectionString": "http://someuser:somepassword@somedomain"
+		},
+		"log": {
+			"level": "debug",
+			"filename": "server.log",
+			"colorize": true,
+			"timestamp": true,
+			"prettyPrint": true
+		}
+	}
+}

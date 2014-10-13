@@ -1,4 +1,4 @@
 node_modules
 server.log
 web/.DS_Store
-conf/Config.js
+conf/Config.json

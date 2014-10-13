@@ -1,4 +1,4 @@
-var config = require('../conf/Config.js').config;
+var config = require('../conf/ConfigService.js').config;
 var github = require('octonode');
 var log = require('./Logger.js').logger;
 var client = github.client(config.github.token);
